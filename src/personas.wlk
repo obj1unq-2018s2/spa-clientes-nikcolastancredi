@@ -1,5 +1,14 @@
 
 object olivia {
+	var property gradoDeConsentracion = 6
+	
+	method recibeMasajes(){
+		gradoDeConsentracion += 3 
+	}
+	
+	method discutir(){
+		gradoDeConsentracion -= 1
+	}
 }
 
 
@@ -22,14 +31,26 @@ object bruno {
 	method estaPerfecto() { return self.esFeliz() and not self.tieneSed() and self.peso().between(50000, 70000) }
 	method mediodiaEnCasa() { 
 		self.comerFideos()
-		// y que mas?
+		self.tomarAgua()
+		self.verElNoticiero()
 	}
 }
 
 object ramiro {
-	method recibirMasajes() { /*... completar ...*/ }
-	method darseUnBanioDeVapor() { /*... completar ...*/ }
-	method comerseUnBigMac() { /*... completar ...*/ }
+	var property nivelContractura = 100
+	var property pielGrasosa = false
+	method recibirMasajes() {
+		if(self.nivelContractura() >= 2){
+			self.nivelContractura(2)
+		} else {
+			self.nivelContractura(0)
+			
+		}
+	}
+	method darseUnBanioDeVapor() { 
+		self.pielGrasosa(true)
+	}
+	method comerseUnBigMac() { }
 	method bajarALaFosa() { /*... completar ...*/ }
 	method jugarAlPaddle() { /*... completar ...*/ }
 	

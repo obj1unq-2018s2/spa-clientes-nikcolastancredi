@@ -1,0 +1,45 @@
+import personas.*
+import spa.*
+
+test "olivia"{
+	olivia.gradoDeConsentracion()
+	assert.equals (6, olivia.gradoDeConsentracion())
+	olivia.recibeMasajes()
+	assert.equals (9, olivia.gradoDeConsentracion())
+	olivia.discutir()
+	assert.equals (8, olivia.gradoDeConsentracion())
+}
+
+test "bruno"{
+	assert.equals (true, bruno.esFeliz())
+	assert.equals (false, bruno.tieneSed())
+	assert.equals (55000 , bruno.peso())
+	bruno.verElNoticiero()
+	assert.equals (false , bruno.esFeliz())
+	bruno.recibirMasajes()
+	assert.equals (true , bruno.esFeliz())
+	bruno.darseUnBanioDeVapor()
+	assert.equals (54500 , bruno.peso())
+	assert.equals (true , bruno.tieneSed())
+	bruno.tomarAgua()
+	assert.equals (false , bruno.tieneSed())
+	bruno.comerFideos()
+	assert.equals (true , bruno.tieneSed())
+	assert.equals (54750 , bruno.peso())
+	bruno.correr()
+	assert.equals (54450 , bruno.peso())
+	bruno.tomarAgua()
+	bruno.recibirMasajes()	
+	assert.equals (true , bruno.estaPerfecto())
+	bruno.mediodiaEnCasa()
+	assert.equals (54700 , bruno.peso())
+	assert.equals (false , bruno.tieneSed())
+	assert.equals (false , bruno.esFeliz())
+		
+}
+
+test "Ramiro"{
+	assert.equals (0,  ramiro.nivelContractura())
+	ramiro.recibirMasajes()
+	
+}

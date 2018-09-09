@@ -4,7 +4,7 @@ import spa.*
 test "olivia"{
 	olivia.gradoDeConsentracion()
 	assert.equals (6, olivia.gradoDeConsentracion())
-	olivia.recibeMasajes()
+	olivia.recibirMasajes()
 	assert.equals (9, olivia.gradoDeConsentracion())
 	olivia.discutir()
 	assert.equals (8, olivia.gradoDeConsentracion())
@@ -39,7 +39,43 @@ test "bruno"{
 }
 
 test "Ramiro"{
-	assert.equals (0,  ramiro.nivelContractura())
+	assert.equals (100,  ramiro.nivelDeContractura())  
 	ramiro.recibirMasajes()
-	
+	assert.equals (98,  ramiro.nivelDeContractura())
+	ramiro.darseUnBanioDeVapor()
+	assert.equals (false,  ramiro.pielGrasosa())
+	ramiro.comerseUnBigMac()
+	assert.equals (true,  ramiro.pielGrasosa())
+	ramiro.bajarALaFosa()
+	assert.equals (true,  ramiro.pielGrasosa())
+	assert.equals (99,  ramiro.nivelDeContractura())
+	ramiro.jugarAlPaddle()
+	assert.equals (102,  ramiro.nivelDeContractura())
+}
+
+test "spa"{
+	assert.equals (100,  ramiro.nivelDeContractura())
+	ramiro.pielGrasosa(true)
+	spa.atender(ramiro)
+	assert.equals (98,  ramiro.nivelDeContractura())
+	assert.equals (false,  ramiro.pielGrasosa())	
+}
+
+test "atender a todo el Mundo"{
+	spa.atender(ramiro)
+	spa.atender(olivia)
+	spa.atender(bruno)
+	assert.equals (bruno, spa.ultimaPersonaAtendida())
+}
+
+test "Promocion"{
+	spa.atender(ramiro)
+	spa.atender(ramiro)
+	assert.equals (94,  ramiro.nivelDeContractura())
+	spa.atender(bruno)
+	spa.atender(olivia)
+	assert.equals(true,bruno.esFeliz())
+	spa.atender(ramiro)
+	assert.equals (92,  ramiro.nivelDeContractura())
+		
 }

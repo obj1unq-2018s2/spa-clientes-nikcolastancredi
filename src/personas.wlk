@@ -2,12 +2,15 @@
 object olivia {
 	var property gradoDeConsentracion = 6
 	
-	method recibeMasajes(){
+	method recibirMasajes(){
 		gradoDeConsentracion += 3 
 	}
 	
 	method discutir(){
 		gradoDeConsentracion -= 1
+	}
+	method darseUnBanioDeVapor(){
+		
 	}
 }
 
@@ -37,25 +40,28 @@ object bruno {
 }
 
 object ramiro {
-	var property nivelContractura = 100
+	var property nivelDeContractura = 100
 	var property pielGrasosa = false
 	method recibirMasajes() {
-		if(self.nivelContractura() >= 2){
-			self.nivelContractura(2)
+		if(self.nivelDeContractura() >= 2){
+			nivelDeContractura -= 2
 		} else {
-			self.nivelContractura(0)
+			nivelDeContractura = 0
 			
 		}
 	}
-	method darseUnBanioDeVapor() { 
+	method darseUnBanioDeVapor() {self.pielGrasosa(false)}
+	method comerseUnBigMac() {self.pielGrasosa(true)}
+	method bajarALaFosa() {  
 		self.pielGrasosa(true)
+		nivelDeContractura += 1
 	}
-	method comerseUnBigMac() { }
-	method bajarALaFosa() { /*... completar ...*/ }
-	method jugarAlPaddle() { /*... completar ...*/ }
+	method jugarAlPaddle() {nivelDeContractura += 3}
 	
 	method diaDeTrabajo() { 
-		/*... completar ...*/
+		self.bajarALaFosa()
+		self.comerseUnBigMac()
+		self.bajarALaFosa()
 	}
 }
 
